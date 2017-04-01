@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E6D52F0B-D431-47AA-9C7D-1F784CB0D9A7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MinDbg</RootNamespace>
+    <AssemblyName>mindbg</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>
+    </DocumentationFile>
+    <CodeAnalysisRuleSet>ExtendedCorrectnessRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CorDebug\CorAppDomain.cs" />
+    <Compile Include="CorDebug\CorBreakpoint.cs" />
+    <Compile Include="CorDebug\CorConstants.cs" />
+    <Compile Include="CorDebug\CorController.cs" />
+    <Compile Include="CorDebug\CorDebugger.cs" />
+    <Compile Include="CorDebug\CorDebuggerOptions.cs" />
+    <Compile Include="CorDebug\CorEvent.cs" />
+    <Compile Include="CorDebug\CorFrame.cs" />
+    <Compile Include="CorDebug\CorFunction.cs" />
+    <Compile Include="CorDebug\CorCode.cs" />
+    <Compile Include="CorDebug\CorModule.cs" />
+    <Compile Include="CorDebug\CorProcess.cs" />
+    <Compile Include="CorDebug\CorThread.cs" />
+    <Compile Include="CorDebug\WrapperBase.cs" />
+    <Compile Include="CorMetadata\CorMetadataImport.cs" />
+    <Compile Include="CorMetadata\MetadataMethodInfo.cs" />
+    <Compile Include="CorMetadata\MetadataType.cs" />
+    <Compile Include="NativeApi\HResults.cs" />
+    <Compile Include="NativeApi\ICLRHostingWrappers.cs" />
+    <Compile Include="NativeApi\ICorDebugWrappers.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NativeApi\IMetadataWrappers.cs" />
+    <Compile Include="NativeApi\NativeImports.cs" />
+    <Compile Include="DebuggingFacility.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SourceBinding\CorSourcePosition.cs" />
+    <Compile Include="SourceBinding\SourceFileReader.cs" />
+    <Compile Include="Symbols\ISymBinder2.cs" />
+    <Compile Include="Symbols\ISymConstant.cs" />
+    <Compile Include="Symbols\ISymEncMethod.cs" />
+    <Compile Include="Symbols\ISymENCUpdate.cs" />
+    <Compile Include="Symbols\ISymReader2.cs" />
+    <Compile Include="Symbols\ISymScope2.cs" />
+    <Compile Include="Symbols\ISymSearchInfo.cs" />
+    <Compile Include="Symbols\ISymWriter2.cs" />
+    <Compile Include="Symbols\SymBinder.cs" />
+    <Compile Include="Symbols\SymConstant.cs" />
+    <Compile Include="Symbols\SymDocument.cs" />
+    <Compile Include="Symbols\SymDocumentWriter.cs" />
+    <Compile Include="Symbols\SymMethod.cs" />
+    <Compile Include="Symbols\SymNamespace.cs" />
+    <Compile Include="Symbols\SymReader.cs" />
+    <Compile Include="Symbols\SymScope.cs" />
+    <Compile Include="Symbols\SymSearchInfo.cs" />
+    <Compile Include="Symbols\SymSearchPolicyAttributes.cs" />
+    <Compile Include="Symbols\SymVariable.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
